@@ -1,0 +1,146 @@
+[
+  {
+    "first_name": "Anna",
+    "surname": "Alli",
+    "username": "aaaa",
+    "password": "1111",
+    "email": "anna.alli@gmail.com",
+    "interests": [ "Cooking" ],
+    "subscribed": [ "abcd", "bbbb", "cccc", "tttt", "pppp" ]
+  },
+  {
+    "first_name": "Kate",
+    "surname": "Brown",
+    "username": "abcd",
+    "password": "1234",
+    "email": "kate.brown@gmail.com",
+    "interests": ["Dancing"],
+    "subscribed": ["cccc"]
+  },
+  {
+    "first_name": "Bobby",
+    "surname": "Berk",
+    "username": "bbbb",
+    "password": "2222",
+    "email": "bobby.berk@gmailcom",
+    "interests": [ "Music", "Reading", "Joggging", "Maths" ],
+    "subscribed": [ "abcd", "aaaa", "eeee", "dddd", "ffff" ]
+  },
+  {
+    "first_name": "Christina",
+    "surname": "Johnson",
+    "username": "cccc",
+    "password": "3333",
+    "email": "christina.johnson@gmail.com",
+    "interests": [ "Maths", "Reading", "Programming" ],
+    "subscribed": [ "ffff", "dddd", "eeee", "pppp", "mmmm" ]
+  },
+  {
+    "first_name": "Dean",
+    "surname": "Larson",
+    "username": "dddd",
+    "password": "4444",
+    "email": "dean.larson@gmail.com",
+    "interests": [ "Volleyball" ],
+    "subscribed": [ "gggg", "kkkk", "llll", "eeee", "oooo" ]
+  },
+  {
+    "first_name": "Fred",
+    "surname": "Reed",
+    "username": "eeee",
+    "password": "5555",
+    "email": "fred.reed@gmail.com",
+    "interests": [ "Cooking", "Football", "Outdoor" ],
+    "subscribed": [ "oooo", "iiii", "ffff", "aaaa" ]
+  },
+  {
+    "first_name": "Michelle",
+    "surname": "Pitt",
+    "username": "ffff",
+    "password": "6767",
+    "email": "michelle.pitt@gmail.com",
+    "interests": [ "Reading", "Volleyball" ],
+    "subscribed": [ "kkkk", "mmmm", "tttt", "pppp", "llll" ]
+  },
+  {
+    "first_name": "Marcus",
+    "surname": "Valm",
+    "username": "gggg",
+    "password": "7777",
+    "email": "marcus.valm@gmail.com",
+    "interests": [ "Cooking", "Maths" ],
+    "subscribed": [ "rrrr", "dddd", "ffff", "ssss", "tttt" ]
+  },
+  {
+    "first_name": "Jenna",
+    "surname": "Rice",
+    "username": "kkkk",
+    "password": "8888",
+    "email": "jenna.rice@gmail.com",
+    "interests": [ "Programming" ],
+    "subscribed": [ "llll", "oooo", "rrrr", "aaaa", "bbbb" ]
+  },
+  {
+    "first_name": "Anna",
+    "surname": "Car",
+    "username": "llll",
+    "password": "9999",
+    "email": "anna.car@gmail.com",
+    "interests": [ "Programming", "Cooking", "Football", "Maths" ],
+    "subscribed": [ "aaaa", "bbbb", "cccc", "dddd", "eeee" ]
+  },
+  {
+    "first_name": "Ann",
+    "surname": "Flowers",
+    "username": "mmmm",
+    "password": "0000",
+    "email": "ann.flowers@gmail.com",
+    "interests": [ "Music", "Cooking", "Volleyball" ],
+    "subscribed": [ "cccc", "aaaa", "ffff", "tttt", "pppp" ]
+  },
+  {
+    "first_name": "Sara",
+    "surname": "Leon",
+    "username": "oooo",
+    "password": "1212",
+    "email": "sara.leon@gmail.com",
+    "interests": [ "Football" ],
+    "subscribed": [ "iiii", "kkkk", "aaaa", "bbbb", "llll" ]
+  },
+  {
+    "first_name": "Daniel",
+    "surname": "Shelby",
+    "username": "iiii",
+    "password": "1312",
+    "email": "daniel.shelby@gmail.com",
+    "interests": [ "Maths", "Outdoor", "Reading", "Music" ],
+    "subscribed": [ "gggg", "cccc", "mmmm", "rrrr", "llll" ]
+  },
+  {
+    "first_name": "Rene",
+    "surname": "Dunn",
+    "username": "pppp",
+    "password": "1324",
+    "email": "rene.dunn@gmail.com",
+    "interests": [ "Cooking" ],
+    "subscribed": [ "rrrr", "ffff", "iiii", "mmmm", "eeee", "bbbb" ]
+  },
+  {
+    "first_name": "Patrick",
+    "surname": "Diaz",
+    "username": "tttt",
+    "password": "2345",
+    "email": "patrick.diaz@gmail.com",
+    "interests": [ "Maths" ],
+    "subscribed": [ "aaaa", "iiii", "oooo", "rrrr", "mmmm", "llll" ]
+  },
+  {
+    "first_name": "Chris",
+    "surname": "Carter",
+    "username": "rrrr",
+    "password": "1365",
+    "email": "christopher.carter@gmail.com",
+    "interests": [ "Maths", "Programming", "Music" ],
+    "subscribed": [ "dddd", "eeee", "cccc", "aaaa", "mmmm" ]
+  }
+]

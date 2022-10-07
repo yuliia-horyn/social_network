@@ -21,15 +21,13 @@ namespace social_network
         public string Password { get; set; }
         [BsonElement("email")]
         public string Email { get; set; }
-        [BsonElement("birth_date")]
-        public DateTime DateOfBirth { get; set; }
         [BsonElement("interests")]
         public List<string> Interests { get; set; }
         [BsonElement("subscribed")]
         public List<string> Subscribed { get; set; }
         public override string ToString()
         {
-            return $"{FirstName} {Surname} {UserName} {DateOfBirth}";
+            return $"{FirstName} {Surname} {UserName}";
         }
     }
     public class Post

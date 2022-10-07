@@ -266,43 +266,6 @@ Please choose the option:
 				Console.WriteLine("Error! Wrong username.");
 			}
 		}
-		/*private void ShowSearchMenu()
-		{
-			char userInput;
-			Console.Clear();
-			do
-			{
-				Console.WriteLine("1 - Search    0 - Exit");
-				Console.Write("Your choice >> ");
-				userInput = Console.ReadLine()[0];
-                SearchMenuInput(userInput);
-			} while (userInput != '0');
-		}
-		private void SearchMenuInput(char userInput)
-		{
-			switch (userInput)
-			{
-				case '1':
-                    string username;
-					Console.Write("Enter username: ");
-					username = Console.ReadLine();
-                    var found = processing.FindUser(username);
-					if (found != null)
-					{
-						ShowUserMenu(found);
-					}
-					else
-					{
-						Console.WriteLine("Wrong username!");
-					}
-					break;
-				case '0':
-					break;
-				default:
-					Console.WriteLine("You typed something wrong");
-					break;
-			}
-		}*/
 		private void ShowUserMenu(User user)
 		{
 			char userInput;

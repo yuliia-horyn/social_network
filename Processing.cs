@@ -6,7 +6,7 @@ using MongoDB.Driver;
 
 namespace social_network
 {
-    class Processing
+    public class Processing
     {
         static string ConnectionString()
         {
@@ -105,6 +105,24 @@ namespace social_network
         {
             current_user.Subscribed.Add(username);
             users.ReplaceOne(u => u.Id == current_user.Id, current_user);
+        }
+        public void CreateUser(string userName, string firstName, string lastName, string password, List<string> follows)
+        {
+            var newUser = new User
+            {
+                UserName = userName,
+                FirstName = firstName,
+                Surname = lastName,
+                Password = password,
+                Subscribed = follows
+            };
+
+            users.InsertOne(newUser);
+        }
+
+        public void DeleteUser(string userName)
+        {
+            users.DeleteOne(p => p.UserName == userName);
         }
         public string DrawInConsoleBox( string s)
         {

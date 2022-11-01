@@ -1,38 +1,60 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using social_network;
+using Neo4j;
 
 namespace social_network
 {
     public class Menu
     {
 		private Processing processing = new Processing();
+		private ProcessingNeo4j processing2 = new ProcessingNeo4j();
+
 		public void ShowMenu()
 		{
-			char user_input = 'n';
-			bool result;
-			do
+			char user_input;			
+			Console.Write("Log in? (y/n): ");
+			user_input = Console.ReadLine()[0];
+			if (user_input != 'y' && user_input == 'n') {Console.Write("You typed something wrong"); }
+            else { Authentication(user_input); ShowMainMenu(); }
+			
+		}
+
+        public void Authentication(char user_input)
+        {
+			bool auth_Result;
+			while (user_input == 'y')
 			{
 				Console.Clear();
-				result = LogIN();
-				if (result)
+				auth_Result = Check_Authentication();
+				if (auth_Result)
 				{
-					ShowMainMenu();
+					break;
 				}
 				else
 				{
-					Console.Write("Incorrect username/password! Try again? (y/n): ");
-					user_input = Console.ReadLine()[0];
+					Console.Write("\nWrong username or password! Try again? (y/n): ");
+					user_input = Console.ReadKey().KeyChar;
 				}
-			} while (user_input == 'y');
+			}
 		}
-		private bool LogIN()
+
+        private bool Check_Authentication()
+        {
+			var successAuthentication = LogIN();	
+			return successAuthentication;
+		}
+
+        private bool LogIN()
 		{
 			Console.WriteLine("Default username and password is : abcd and 1234\n");
 			Console.Write("Enter username: ");
 			string username = Console.ReadLine();
 			Console.Write("Enter password: ");
-			string password = Console.ReadLine();		
+			string password = Console.ReadLine();
+			processing.Log_in(username, password);
+			processing2.Authtentificate(username, password);
 			return processing.Log_in(username, password);
 		}
 		private void ShowMainMenu()
@@ -54,6 +76,8 @@ Please choose the option:
 1 - Posts stream
 2 - My subscribed
 3 - Search user
+4 - Create new user
+5 - Delete user
 0 - Exit";
 				Console.WriteLine(menu);								
 				Console.Write("Enter your choice: ");
@@ -72,19 +96,13 @@ Please choose the option:
 					ShowSubscribedMenu();
 					break;
 				case '3':
-					Console.Clear();
-					string username;
-					Console.Write("Enter username: ");
-					username = Console.ReadLine();
-					var found = processing.FindUser(username);
-					if (found != null)
-					{
-						ShowUserMenu(found);
-					}
-					else
-					{
-						Console.WriteLine("Wrong username!");
-					}
+					ShowSearchMenu();					
+					break;
+				case '4':
+					CreateNewUserMenu();
+					break;
+				case '5':
+					DeleteUserMenu();
 					break;
 				case '0':
 					break;
@@ -93,7 +111,56 @@ Please choose the option:
 					break;
 			}
 		}
-		private void ShowPostsMenu()
+
+        private void ShowSearchMenu()
+        {
+			Console.Clear();
+			string username;
+			Console.Write("Enter username: ");
+			username = Console.ReadLine();
+			var found = processing.FindUser(username);
+			if (found != null)
+			{
+				ShowUserMenu(found);
+			}
+			else
+			{
+				Console.WriteLine("Wrong username!");
+			}
+		}
+
+        private void DeleteUserMenu()
+        {
+			Console.Clear();
+			string userName;
+			Console.Write("Enter username of user which you want to delete : ");
+			userName = Console.ReadLine();
+			processing.DeleteUser(userName);
+			processing2.DeleteUser(userName);
+		}
+
+        private void CreateNewUserMenu()
+        {
+			Console.Clear();
+			string userName;
+			Console.Write("Your username : ");
+			userName = Console.ReadLine();
+			string firstName;
+			Console.Write("Your first name : ");
+			firstName = Console.ReadLine();
+			string lastName;
+			Console.Write("Your surname : ");
+			lastName = Console.ReadLine();
+			string password;
+			Console.Write("Your password : ");
+			password = Console.ReadLine();
+			List<string> follows = new List<string>();
+
+			processing.CreateUser(userName, firstName, lastName, password, follows);
+			processing2.CreateUser(userName, firstName, lastName, password);
+		}
+
+        private void ShowPostsMenu()
 		{
 			char userInput;
 			Console.Clear();
@@ -215,11 +282,12 @@ Please choose the option:
 		private void Unsubscribe_user()
 		{
 			string choice;
-			bool t;
+			bool? t;
 			Console.Write("Write username: ");
 			choice = Console.ReadLine();
 			t = processing.UnSubscribe(choice);
-			if (t)
+			processing2.DeleteRelationshipUserSubscribed(choice);
+			if (t==true)
 			{
 				Console.WriteLine($"Unsubscribe user: {choice}");
 			}
@@ -275,6 +343,7 @@ Please choose the option:
 			{
 				Console.WriteLine("Profile:");
 				Console.WriteLine(user);
+				ExistRelationshipMenu(user.UserName);
 				if (processing.IsSubscribed(user))
 				{
 					Console.WriteLine("You subscribed on this user.");
@@ -301,11 +370,13 @@ Please choose the option:
 					if (processing.IsSubscribed(user))
 					{
 						processing.UnSubscribe(user.UserName);
+						processing2.DeleteRelationshipUserSubscribed(user.UserName);
 						Console.WriteLine($"You not subscribe on user {user.UserName}");
 					}
 					else
 					{
 						processing.Subscribe(user.UserName);
+						processing2.CreateRelationshipUserSubscribed(user.UserName);
 						Console.WriteLine($"You subscribe on user {user.UserName}");
 					}
 					break;
@@ -344,6 +415,21 @@ Please choose the option:
 			{
 				Console.WriteLine("\nThat was last post \n Press any button...");
 				Console.ReadLine();
+			}
+		}
+		private void ExistRelationshipMenu(string username)
+		{
+			var existRelationship = processing2.SearchRelationshipOfUser(username);
+
+			if (existRelationship.Count() != 0)
+			{
+				Console.WriteLine("\nYou have relationship with this user )");
+				Console.WriteLine($"The distance to this user : {processing2.ShortestPathToSearchedUser(username)}");
+			}
+			else
+			{
+				Console.WriteLine("\nYou haven`t relationship with this user (");
+				Console.WriteLine($"The distance to this user : {processing2.ShortestPathToSearchedUser(username)}");
 			}
 		}
 	}

@@ -1,0 +1,17 @@
+first_name,surname,username,password,email,interests/0,subscribed/0,subscribed/1,subscribed/2,subscribed/3,subscribed/4,interests/1,interests/2,interests/3,subscribed/5
+Anna,Alli,aaaa,1111,anna.alli@gmail.com,Cooking,abcd,bbbb,cccc,tttt,pppp,,,,
+Kate,Brown,abcd,1234,kate.brown@gmail.com,Dancing,cccc,,,,,,,,
+Bobby,Berk,bbbb,2222,bobby.berk@gmailcom,Music,abcd,aaaa,eeee,dddd,ffff,Reading,Joggging,Maths,
+Christina,Johnson,cccc,3333,christina.johnson@gmail.com,Maths,ffff,dddd,eeee,pppp,mmmm,Reading,Programming,,
+Dean,Larson,dddd,4444,dean.larson@gmail.com,Volleyball,gggg,kkkk,llll,eeee,oooo,,,,
+Fred,Reed,eeee,5555,fred.reed@gmail.com,Cooking,oooo,iiii,ffff,aaaa,,Football,Outdoor,,
+Michelle,Pitt,ffff,6767,michelle.pitt@gmail.com,Reading,kkkk,mmmm,tttt,pppp,llll,Volleyball,,,
+Marcus,Valm,gggg,7777,marcus.valm@gmail.com,Cooking,rrrr,dddd,ffff,ssss,tttt,Maths,,,
+Jenna,Rice,kkkk,8888,jenna.rice@gmail.com,Programming,llll,oooo,rrrr,aaaa,bbbb,,,,
+Anna,Car,llll,9999,anna.car@gmail.com,Programming,aaaa,bbbb,cccc,dddd,eeee,Cooking,Football,Maths,
+Ann,Flowers,mmmm,0000,ann.flowers@gmail.com,Music,cccc,aaaa,ffff,tttt,pppp,Cooking,Volleyball,,
+Sara,Leon,oooo,1212,sara.leon@gmail.com,Football,iiii,kkkk,aaaa,bbbb,llll,,,,
+Daniel,Shelby,iiii,1312,daniel.shelby@gmail.com,Maths,gggg,cccc,mmmm,rrrr,llll,Outdoor,Reading,Music,
+Rene,Dunn,pppp,1324,rene.dunn@gmail.com,Cooking,rrrr,ffff,iiii,mmmm,eeee,,,,bbbb
+Patrick,Diaz,tttt,2345,patrick.diaz@gmail.com,Maths,aaaa,iiii,oooo,rrrr,mmmm,,,,llll
+Chris,Carter,rrrr,1365,christopher.carter@gmail.com,Maths,dddd,eeee,cccc,aaaa,mmmm,Programming,Music,,

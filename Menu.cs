@@ -185,6 +185,7 @@ Please choose the option:
 				Console.WriteLine("\nEnd of posts stream\n Press any button...");
 				Console.ReadLine();
 			}
+		RefreshPosts();
 		}
 		private void StreamMenuInput(char userInput, Post post, ref int index, ref bool next_post)
 		{
